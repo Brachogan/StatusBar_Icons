@@ -117,7 +117,7 @@ public class FootballFragment extends Fragment {
                 "West Bromwich Albion F.C.",
                 "West Ham United F.C.",
                 "Wigan Athletic F.C.",
-                "Wolverhampton Wanderers F.C.",
+                "Wolverhampton Wanderers F.C."
         };
 
     }
