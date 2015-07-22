@@ -124,8 +124,6 @@ public class MainActivity extends Activity {
                 "Volkswagen",
                 "Volvo"
         };
-
-
     }
 
     private static class Others {
@@ -170,8 +168,5 @@ public class MainActivity extends Activity {
                 "XDA",
                 "SnowflakeTeam"
         };
-
     }
-
-
 }
