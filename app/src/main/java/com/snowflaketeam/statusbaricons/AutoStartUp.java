@@ -14,10 +14,12 @@ import android.os.IBinder;
 
 /**
  * Created by Mohammed on 7/20/2015.
- *
+ * <p/>
  * the service that bring the icon back after booting up
  */
 public class AutoStartUp extends Service {
+
+
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     @Override
@@ -27,7 +29,7 @@ public class AutoStartUp extends Service {
         //To restore the value of last icon used
         SharedPreferences sharedPreferences = getSharedPreferences(TemplateFragment.SHARED_PREFS_KEY, MODE_PRIVATE);
         int icon = sharedPreferences.getInt(TemplateFragment.NOTIFICATION_KEY, R.drawable.snowflake_icon);
-
+        String iconName = sharedPreferences.getString(TemplateFragment.ICON_NAME_KEY, "SnowflakeTeam");
         /*
         * To setup the icon from the scratch and
         *
@@ -43,17 +45,18 @@ public class AutoStartUp extends Service {
                 true);
 
         Notification.Builder builder = new Notification.Builder(this);
-        builder.setContentTitle("StatusBar Icons");
-        builder.setContentText("SnowflakeTeam");
+        builder.setContentTitle(iconName);
+        builder.setContentText("StatusBar Icons");
+        builder.setSubText("SnowflakeTeam");
         builder.setSmallIcon(icon);
         builder.setLargeIcon(bm);
         builder.setOngoing(true);
         Notification notification = builder.build();
         NotificationManager notificationManger =
-                (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManger.notify(01, notification);
-
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManger.notify(TemplateFragment.NOTIFICATION_ID, notification);
     }
+
 
     @Override
     public IBinder onBind(Intent intent) {

@@ -45,6 +45,7 @@
         </LinearLayout>
 
         <RelativeLayout
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="2dp"
@@ -59,6 +60,19 @@
                 android:focusable="false"
                 android:numColumns="2" />
 
+            <Button
+                android:id="@+id/clear_btn"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="center|bottom"
+                android:background="#ff292929"
+                android:onClick="clearNotification"
+                android:text="Remove Logo From StatusBar"
+                android:gravity="center"
+                android:textColor="#fff1f1f1"
+                android:textSize="14sp"
+                android:typeface="monospace" />
         </RelativeLayout>
 
     </LinearLayout>

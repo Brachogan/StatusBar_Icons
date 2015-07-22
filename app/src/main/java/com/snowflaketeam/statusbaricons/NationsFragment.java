@@ -36,22 +36,22 @@ public class NationsFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) {
-                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(AfricaFlags.africaNationIconIDs)).addToBackStack(null).commit();
+                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(AfricaNationsIcon.africaNationIconIDs, AfricaNationsIcon.africaNationIconName)).addToBackStack(null).commit();
 
                 } else if (position == 1) {
-                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(AsiaFlags.asiaNationIconIDs)).addToBackStack(null).commit();
+                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(AsiaNationsIcon.asiaNationIconIDs, AsiaNationsIcon.asiaNationIconNames)).addToBackStack(null).commit();
 
                 } else if (position == 2) {
-                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(EuropeFlags.euroNationIconIDs)).addToBackStack(null).commit();
+                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(EuropeNationsIcon.euroNationIconIDs, EuropeNationsIcon.euroNationIconNames)).addToBackStack(null).commit();
 
                 } else if (position == 3) {
-                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(OceaniaFlags.oceaniaNationIconIDs)).addToBackStack(null).commit();
+                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(OceaniaNationsIcon.oceaniaNationIconIDs, OceaniaNationsIcon.oceaniaNationIconNames)).addToBackStack(null).commit();
 
                 } else if (position == 4) {
-                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(NorthAmericaFlags.northAmericaNationIconIDs)).addToBackStack(null).commit();
+                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(NorthAmericaNationsIcon.northAmericaNationIconIDs, NorthAmericaNationsIcon.northAmericaNationIconNames)).addToBackStack(null).commit();
 
                 } else if (position == 5) {
-                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(SouthAmericaFlags.southAmericaNationIconIDs)).addToBackStack(null).commit();
+                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(SouthAmericaNationsIcon.southAmericaNationIconIDs, SouthAmericaNationsIcon.southAmericaNationIconNames)).addToBackStack(null).commit();
 
                 }
             }
@@ -60,7 +60,7 @@ public class NationsFragment extends Fragment {
         return view;
     }
 
-    private static class AfricaFlags {
+    private static class AfricaNationsIcon {
         static int[] africaNationIconIDs = {
                 R.drawable.fb_nt_africa_algeria,
                 R.drawable.fb_nt_africa_angola,
@@ -101,7 +101,6 @@ public class NationsFragment extends Fragment {
                 R.drawable.fb_nt_africa_namibia,
                 R.drawable.fb_nt_africa_niger,
                 R.drawable.fb_nt_africa_nigeria,
-                R.drawable.fb_nt_africa_reunion,
                 R.drawable.fb_nt_africa_rwanda,
                 R.drawable.fb_nt_africa_sao,
                 R.drawable.fb_nt_africa_senegal,
@@ -121,9 +120,69 @@ public class NationsFragment extends Fragment {
                 R.drawable.fb_nt_africa_zimbabwe
         };
 
+        static String[] africaNationIconName = {
+                "Algeria",
+                "Angola",
+                "Benin",
+                "Botswana",
+                "Burkina Faso",
+                "Burundi",
+                "Cameroon",
+                "Cape Verde",
+                "The Central African Republic",
+                "Chad",
+                "The Comoros",
+                "Congo",
+                "Djibouti",
+                "The Democratic Republic of the Congo",
+                "Egypt",
+                "Equatorial Guinea",
+                "Eritrea",
+                "Ethiopia",
+                "Gabon",
+                "The Gambia",
+                "Ghana",
+                "Guinea",
+                "Guinea-Bissau",
+                "Cote d'Ivoire",
+                "Kenya",
+                "Lesotho",
+                "Liberia",
+                "Libya",
+                "Madagascar",
+                "Malawi",
+                "Mali",
+                "Mauritania",
+                "Mauritius",
+                "Mayotte",
+                "Morocco",
+                "Mozambique",
+                "Namibia",
+                "Niger",
+                "Nigeria",
+                "Rwanda",
+                "Sao Tome and Principe",
+                "Senegal",
+                "The Seychelles",
+                "Sierra Leone",
+                "Somalia",
+                "South Africa",
+                "South Sudan",
+                "Sudan",
+                "Swaziland",
+                "Tanzania",
+                "Togo",
+                "Tunisia",
+                "Uganda",
+                "Zambia",
+                "Zanzibar",
+                "Zimbabwe"
+        };
+
     }
 
-    private static class AsiaFlags {
+    private static class AsiaNationsIcon {
+
         static int[] asiaNationIconIDs = {
                 R.drawable.fb_nt_asia_afghanistan,
                 R.drawable.fb_nt_asia_australia,
@@ -135,7 +194,6 @@ public class NationsFragment extends Fragment {
                 R.drawable.fb_nt_asia_china,
                 R.drawable.fb_nt_asia_chinesetaipei,
                 R.drawable.fb_nt_asia_east,
-                R.drawable.fb_nt_asia_guam,
                 R.drawable.fb_nt_asia_hongkong,
                 R.drawable.fb_nt_asia_india,
                 R.drawable.fb_nt_asia_indonesia,
@@ -171,12 +229,61 @@ public class NationsFragment extends Fragment {
                 R.drawable.fb_nt_asia_uae,
                 R.drawable.fb_nt_asia_uzbekistan,
                 R.drawable.fb_nt_asia_vietnam,
-                R.drawable.fb_nt_asia_yemen,
+                R.drawable.fb_nt_asia_yemen
+        };
+
+        static String[] asiaNationIconNames = {
+                "Afghanistan",
+                "Australia",
+                "Bahrain",
+                "Bangladesh",
+                "Bhutan",
+                "Brunei",
+                "Cambodia",
+                "China",
+                "Chinese Taipei",
+                "East Timor",
+                "Hong Kong",
+                "India",
+                "Indonesia",
+                "Iran",
+                "Iraq",
+                "Japan",
+                "Jordan",
+                "Kyrgyzstan",
+                "Kuwait",
+                "Laos",
+                "Lebanon",
+                "Macau",
+                "Malaysia",
+                "Maldives",
+                "Mongolia",
+                "Myanmar",
+                "Nepal",
+                "North Korea",
+                "Northern Mariana Islands",
+                "Oman",
+                "Pakistan",
+                "Palestine",
+                "Philippines",
+                "Qatar",
+                "Saudi Arabia",
+                "Singapore",
+                "South Korea",
+                "Sri Lanka",
+                "Syria",
+                "Tajikistan",
+                "Thailand",
+                "Turkmenistan",
+                "The United Arab Emirates",
+                "Uzbekistan",
+                "Vietnam",
+                "Yemen"
         };
 
     }
 
-    private static class EuropeFlags {
+    private static class EuropeNationsIcon {
         static int[] euroNationIconIDs = {
                 R.drawable.fb_nt_euro_albania,
                 R.drawable.fb_nt_euro_andorra,
@@ -230,12 +337,68 @@ public class NationsFragment extends Fragment {
                 R.drawable.fb_nt_euro_switzerland,
                 R.drawable.fb_nt_euro_turkey,
                 R.drawable.fb_nt_euro_ukraine,
-                R.drawable.fb_nt_euro_wales,
+                R.drawable.fb_nt_euro_wales
+        };
+
+        static String[] euroNationIconNames = {
+                "Albania",
+                "Andorra",
+                "Armenia",
+                "Austria",
+                "Azerbaijan",
+                "Belarus",
+                "Belgium",
+                "Bosnia and Herzegovina",
+                "Bulgaria",
+                "Croatia",
+                "Cyprus",
+                "Czech Republic",
+                "Denmark",
+                "England",
+                "Estonia",
+                "Faroe Islands",
+                "Finland",
+                "France",
+                "Georgia",
+                "Germany",
+                "Greece",
+                "Hungary",
+                "Iceland",
+                "Ireland",
+                "Israel",
+                "Italy",
+                "Kazakhstan",
+                "Latvia",
+                "Liechtenstein",
+                "Lithuania",
+                "Luxembourg",
+                "Macedonia",
+                "Malta",
+                "Moldova",
+                "Montenegro",
+                "Netherlands",
+                "Northern Ireland",
+                "Norway",
+                "Poland",
+                "Portugal",
+                "Romania",
+                "Russia",
+                "San Marino",
+                "Scotland",
+                "Serbia",
+                "Slovakia",
+                "Slovenia",
+                "Spain",
+                "Sweden",
+                "Switzerland",
+                "Turkey",
+                "Ukraine",
+                "Wales",
         };
 
     }
 
-    private static class OceaniaFlags {
+    private static class OceaniaNationsIcon {
         static int[] oceaniaNationIconIDs = {
                 R.drawable.fb_nt_oceania_americansamoa,
                 R.drawable.fb_nt_oceania_cook,
@@ -250,12 +413,29 @@ public class NationsFragment extends Fragment {
                 R.drawable.fb_nt_oceania_tonga,
                 R.drawable.fb_nt_oceania_tuvalu,
                 R.drawable.fb_nt_oceania_vanuatu,
-                R.drawable.fb_nt_oceania_wallis,
+                R.drawable.fb_nt_oceania_wallis
+        };
+
+        static String[] oceaniaNationIconNames = {
+                "American Samoa",
+                "Cook Islands",
+                "Fiji",
+                "Kiribati",
+                "Fédération Calédonienne",
+                "New Zealand",
+                "Papua New Guinea",
+                "Samoa",
+                "Solomon Islands",
+                "Tahiti",
+                "Tonga",
+                "Tuvalu",
+                "Vanuatu",
+                "Wallis and Futuna"
         };
 
     }
 
-    private static class NorthAmericaFlags {
+    private static class NorthAmericaNationsIcon {
         static int[] northAmericaNationIconIDs = {
                 R.drawable.fb_nt_northamerica_anguilla,
                 R.drawable.fb_nt_northamerica_antigua,
@@ -266,7 +446,6 @@ public class NationsFragment extends Fragment {
                 R.drawable.fb_nt_northamerica_bermuda,
                 R.drawable.fb_nt_northamerica_britishvirgin,
                 R.drawable.fb_nt_northamerica_canada,
-                R.drawable.fb_nt_northamerica_cayman,
                 R.drawable.fb_nt_northamerica_cayman,
                 R.drawable.fb_nt_northamerica_costa,
                 R.drawable.fb_nt_northamerica_cuba,
@@ -300,9 +479,53 @@ public class NationsFragment extends Fragment {
                 R.drawable.fb_nt_northamerica_usa,
                 R.drawable.fb_nt_northamerica_usvi
         };
+
+        static String[] northAmericaNationIconNames = {
+                "Anguilla",
+                "Antigua and Barbuda",
+                "Aruba",
+                "Bahamas",
+                "Barbados",
+                "Belize",
+                "Bermuda",
+                "British Virgin Islands",
+                "Canada",
+                "Cayman Islands ",
+                "Costa Rica",
+                "Cuba",
+                "Curaçao",
+                "Dominica",
+                "Dominican Republic",
+                "El Salvador",
+                "French Guiana",
+                "Grenada",
+                "Guadeloupe",
+                "Guatemala",
+                "Guyana",
+                "Haiti",
+                "Honduras",
+                "Jamaica",
+                "Martinique",
+                "Mexico",
+                "Montserrat",
+                "Nicaragua",
+                "Panama",
+                "Puerto Rico",
+                "Sint Maarten",
+                "Saint Kitts and Nevis",
+                "Saint Lucia",
+                "Saint Martin",
+                "Saint Pierre and Miquelon",
+                "Saint Vincent and the Grenadines",
+                "Suriname",
+                "Trinidad and Tobago",
+                "Turks and Caicos Islands",
+                "United States of America",
+                "United States Virgin Islands"
+        };
     }
 
-    private static class SouthAmericaFlags {
+    private static class SouthAmericaNationsIcon {
         static int[] southAmericaNationIconIDs = {
                 R.drawable.fb_nt_southamerica_argentina,
                 R.drawable.fb_nt_southamerica_bolivia,
@@ -314,6 +537,19 @@ public class NationsFragment extends Fragment {
                 R.drawable.fb_nt_southamerica_peru,
                 R.drawable.fb_nt_southamerica_uruguay,
                 R.drawable.fb_nt_southamerica_venezuala
+        };
+
+        static String[] southAmericaNationIconNames = {
+                "Argentina",
+                "Bolivia",
+                "Brazil",
+                "Chile",
+                "Colombia",
+                "Ecuador",
+                "Paraguay",
+                "Peru",
+                "Uruguay",
+                "Venezuela"
         };
 
     }

@@ -21,15 +21,25 @@ import android.widget.GridView;
 public class TemplateFragment extends Fragment {
     GridView gridView;
     int[] iconIDs;
+    String[] iconsNames;
+    public static final int NOTIFICATION_ID = 12121992;
     public static final String SHARED_PREFS_KEY = "SharedPreferences";
     public static final String NOTIFICATION_KEY = "Notification";
+    public static final String ICON_NAME_KEY = "IconName";
+
+    public TemplateFragment() {
+
+    }
 
     @SuppressLint("ValidFragment")
     public TemplateFragment(int[] iconIDs) {
         this.iconIDs = iconIDs;
     }
-    public TemplateFragment() {
 
+    @SuppressLint("ValidFragment")
+    public TemplateFragment(int[] iconIDs, String[] iconsNames) {
+        this.iconIDs = iconIDs;
+        this.iconsNames = iconsNames;
     }
 
     @Override
@@ -62,20 +72,22 @@ public class TemplateFragment extends Fragment {
                         true);
 
                 Notification.Builder builder = new Notification.Builder(getActivity());
-                builder.setContentTitle("StatusBar Icons");
-                builder.setContentText("SnowflakeTeam");
+                builder.setContentTitle(iconsNames[position]);
+                builder.setContentText("StatusBar Icons");
+                builder.setSubText("SnowflakeTeam");
                 builder.setSmallIcon(iconIDs[position]);
                 builder.setLargeIcon(bm);
                 builder.setOngoing(true);
                 Notification notification = builder.build();
                 NotificationManager notificationManger =
-                        (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
-                notificationManger.notify(01, notification);
+                        (NotificationManager) getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
+                notificationManger.notify(NOTIFICATION_ID, notification);
 
                 // To save the last used icon value
                 SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED_PREFS_KEY, Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putInt(NOTIFICATION_KEY, iconIDs[position]).commit();
+                editor.putString(ICON_NAME_KEY,iconsNames[position]).commit();
             }
         });
         return view;

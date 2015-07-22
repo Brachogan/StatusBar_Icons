@@ -18,7 +18,7 @@ public class FootballFragment extends Fragment {
             R.drawable.main_serie_a,
             R.drawable.main_ligue,
             R.drawable.main_egyptian_league,
-            R.drawable.main_national_teams,
+            R.drawable.main_national_teams
     };
 
     @Override
@@ -35,26 +35,25 @@ public class FootballFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) {
-                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(PremierLeague.premierLeagueIconIDs)).addToBackStack(null).commit();
+                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(PremierLeague.premierLeagueIconIDs, PremierLeague.premierLeagueIconNames)).addToBackStack(null).commit();
 
                 } else if (position == 1) {
-                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(LigaBBVA.ligaBBVAIconIDs)).addToBackStack(null).commit();
+                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(LigaBBVA.ligaBBVAIconIDs, LigaBBVA.ligaBBVAIconNames)).addToBackStack(null).commit();
 
                 } else if (position == 2) {
-                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(BundesLiga.bundesLigaIconIDs)).addToBackStack(null).commit();
+                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(BundesLiga.bundesLigaIconIDs, BundesLiga.bundesLigaIconNames)).addToBackStack(null).commit();
 
                 } else if (position == 3) {
-                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(SerieA.serieAIconIDs)).addToBackStack(null).commit();
+                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(SerieA.serieAIconIDs, SerieA.serieAIconNames)).addToBackStack(null).commit();
 
                 } else if (position == 4) {
-                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(LigueOne.ligueIconIDs)).addToBackStack(null).commit();
+                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(LigueOne.ligueIconIDs, LigueOne.ligueIconNames)).addToBackStack(null).commit();
 
                 } else if (position == 5) {
-                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(EgyLeague.egyIconIDs)).addToBackStack(null).commit();
+                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(EgyLeague.egyIconIDs, EgyLeague.egyIconNames)).addToBackStack(null).commit();
 
                 } else if (position == 6) {
                     getFragmentManager().beginTransaction().add(R.id.container, new NationsFragment()).addToBackStack(null).commit();
-
                 }
             }
         });
@@ -89,7 +88,36 @@ public class FootballFragment extends Fragment {
                 R.drawable.fb_premier_west_bromwich_albion_fc,
                 R.drawable.fb_premier_west_ham_united_fc,
                 R.drawable.fb_premier_wigan_athletic_fc,
-                R.drawable.fb_premier_wolverhampton_wanderers_fc,
+                R.drawable.fb_premier_wolverhampton_wanderers_fc
+        };
+
+        static String[] premierLeagueIconNames = {
+                "Arsenal F.C.",
+                "Aston Villa F.C.",
+                "Blackburn Rovers F.C.",
+                "Burnley F.C.",
+                "Chelsea  F.C.",
+                "Crystal Palace F.C.",
+                "Everton F.C.",
+                "Fulham F.C.",
+                "Hull City A.F.C.",
+                "Leycester City F.C.",
+                "Liverpool F.C.",
+                "Manchester City F.C.",
+                "Manchester United F.C.",
+                "Middlesbrough F.C.",
+                "Newcastle United F.C.",
+                "Queens Park Rangers F.C.",
+                "Sheffield United F.C.",
+                "Southampton F.C.",
+                "Stoke City F.C.",
+                "Sunderland A.F.C.",
+                "Swansea City A.F.C.",
+                "Tottenham Hotspur F.C.",
+                "West Bromwich Albion F.C.",
+                "West Ham United F.C.",
+                "Wigan Athletic F.C.",
+                "Wolverhampton Wanderers F.C.",
         };
 
     }
@@ -115,7 +143,30 @@ public class FootballFragment extends Fragment {
                 R.drawable.fb_bbva_sevilla,
                 R.drawable.fb_bbva_ud_almeria,
                 R.drawable.fb_bbva_valencia,
-                R.drawable.fb_bbva_villarreal,
+                R.drawable.fb_bbva_villarreal
+        };
+
+        static String[] ligaBBVAIconNames = {
+                "Athletic Bilbao",
+                "Atlético Madrid",
+                "FC Barcelona",
+                "Celta de Vigo",
+                "Cordoba",
+                "Deportivo de La Coruña",
+                "Elche CF",
+                "RCD Espanyol",
+                "Getafe CF",
+                "Granada CF",
+                "Levante UD",
+                "Málaga CF",
+                "Rayo Vallecano",
+                "Real Madrid C.F.",
+                "Real Sociedad",
+                "SD Eibar",
+                "Sevilla FC",
+                "UD Almería",
+                "Valencia CF",
+                "Villarreal CF"
         };
 
     }
@@ -139,8 +190,28 @@ public class FootballFragment extends Fragment {
                 R.drawable.fb_bundes_schalke,
                 R.drawable.fb_bundes_stuttgart,
                 R.drawable.fb_bundes_werder_bremen,
-                R.drawable.fb_bundes_wolfsburg,
+                R.drawable.fb_bundes_wolfsburg
+        };
 
+        static String[] bundesLigaIconNames = {
+                "FC Augsburg",
+                "Bayer Leverkusen",
+                "FC Bayern Munich",
+                "Borussia Mönchengla",
+                "Borussia Dortmund",
+                "Eintracht Frankfurt",
+                "SC Freiburg",
+                "Hamburger SV",
+                "Hannover 96",
+                "Hertha BSC",
+                "TSG 1899 Hoffenheim",
+                "1. FC Köln",
+                "1. FSV Mainz 05",
+                "SC Paderborn 07",
+                "FC Schalke 04",
+                "VfB Stuttgart",
+                "SV Werder Bremen",
+                "VfL Wolfsburg"
         };
 
     }
@@ -166,8 +237,30 @@ public class FootballFragment extends Fragment {
                 R.drawable.fb_seriea_uc_sampdoria,
                 R.drawable.fb_seriea_udinese_calcio,
                 R.drawable.fb_seriea_us_palermo,
-                R.drawable.fb_seriea_us_sassuolo_calcio,
+                R.drawable.fb_seriea_us_sassuolo_calcio
+        };
 
+        static String[] serieAIconNames = {
+                "A.C. Cesena",
+                "A.C. Chievo Verona",
+                "A.C. Milan",
+                "ACF Fiorentina",
+                "A.S. Roma",
+                "Atalanta B.C.",
+                "Cagliari Calcio",
+                "Empoli F.C.",
+                "Inter Milan",
+                "Juventus F.C.",
+                "Genoa C.F.C.",
+                "Hellas Verona F.C.",
+                "Parma F.C.",
+                "S.S. Lazio",
+                "S.S.C. Napoli",
+                "Torino F.C.",
+                "U.C. Sampdoria",
+                "Udinese Calcio",
+                "U.S. Città di Palermo",
+                "U.S. Sassuolo Calcio"
         };
 
     }
@@ -194,7 +287,31 @@ public class FootballFragment extends Fragment {
                 R.drawable.fb_ligue_stade_de_reims,
                 R.drawable.fb_ligue_stade_malherbe_caen,
                 R.drawable.fb_ligue_stade_rennais_fc,
-                R.drawable.fb_ligue_toulouse_fc,
+                R.drawable.fb_ligue_toulouse_fc
+        };
+
+        static String[] ligueIconNames = {
+                "AS Monaco FC",
+                "AS Saint-Étienne",
+                "En Avant de Guingamp",
+                "Evian Thonon Gaillard F.C.",
+                "FC Girondins de Bordeaux",
+                "FC Lorient",
+                "FC Metz",
+                "FC Nantes",
+                "Lille OSC",
+                "Montpellier HSC",
+                "OGC Nice",
+                "Olympique de Marseille",
+                "Olympique Lyonnais",
+                "Paris FC",
+                "Paris Saint-Germain F.C.",
+                "RC Lens",
+                "SC Bastia",
+                "Stade de Reims",
+                "Stade Malherbe Caen",
+                "Stade Rennais F.C.",
+                "Toulouse FC"
         };
 
     }
@@ -213,7 +330,23 @@ public class FootballFragment extends Fragment {
                 R.drawable.fb_egy_ismailyfc,
                 R.drawable.fb_egy_petrojetfc,
                 R.drawable.fb_egy_policunionfc,
-                R.drawable.fb_egy_zamalekfc,
+                R.drawable.fb_egy_zamalekfc
+        };
+
+        static String[] egyIconNames = {
+                "Al Ahly SC",
+                "Alexandria Union F.C.",
+                "El Mokawloon SC",
+                "Tala'ea El-Gaish SC",
+                "El Gouna FC",
+                "Al-Masry SC",
+                "Enppi F.C.",
+                "El-Harby SC",
+                "Haras El Hodood SC",
+                "Ismaily SC",
+                "Petrojet FC",
+                "Police Union F.C.",
+                "Zamalek SC"
         };
 
     }

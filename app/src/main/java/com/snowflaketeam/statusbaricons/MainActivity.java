@@ -1,6 +1,8 @@
 package com.snowflaketeam.statusbaricons;
 
 import android.app.Activity;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,7 +15,8 @@ public class MainActivity extends Activity {
             R.drawable.main_automotive,
             R.drawable.main_football,
             R.drawable.main_others,
-            R.drawable.main_flags};
+            R.drawable.main_flags
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,16 +35,21 @@ public class MainActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) {
-                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(Automotive.automotiveIconIDs)).addToBackStack(null).commit();
+                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(Automotive.automotiveIconIDs, Automotive.automotiveIconNames)).addToBackStack(null).commit();
                 } else if (position == 1) {
                     getFragmentManager().beginTransaction().add(R.id.container, new FootballFragment()).addToBackStack(null).commit();
                 } else if (position == 2) {
-                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(Others.otherIconIDs)).addToBackStack(null).commit();
+                    getFragmentManager().beginTransaction().add(R.id.container, new TemplateFragment(Others.otherIconIDs, Others.otherIconNames)).addToBackStack(null).commit();
                 } else if (position == 3) {
                     getFragmentManager().beginTransaction().add(R.id.container, new FlagsFragment()).addToBackStack(null).commit();
                 }
             }
         });
+    }
+
+    public void clearNotification(View view) {
+        NotificationManager notification = (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
+        notification.cancel(TemplateFragment.NOTIFICATION_ID);
     }
 
     private static class Automotive {
@@ -78,8 +86,45 @@ public class MainActivity extends Activity {
                 R.drawable.automotive_skoda,
                 R.drawable.automotive_toyota,
                 R.drawable.automotive_volkswagen,
-                R.drawable.automotive_volvo,
+                R.drawable.automotive_volvo
         };
+
+        static String[] automotiveIconNames = {
+                "Alfa Romeo",
+                "Audi",
+                "BMW",
+                "Brilliance",
+                "Chevrolet",
+                "Citroen",
+                "Ferrari",
+                "Fiat",
+                "Ford",
+                "Honda",
+                "Hyundai",
+                "Infiniti",
+                "Jaguar",
+                "Jeep",
+                "Kia",
+                "Lancia",
+                "Land Rover",
+                "Lexus",
+                "Mazda",
+                "Mercedes",
+                "MG",
+                "Mini Cooper",
+                "Mitsubishi",
+                "Nissan",
+                "Opel",
+                "Peugeot",
+                "Porsche",
+                "Renault",
+                "Seat",
+                "Skoda",
+                "Toyota",
+                "Volkswagen",
+                "Volvo"
+        };
+
 
     }
 
@@ -94,7 +139,6 @@ public class MainActivity extends Activity {
                 R.drawable.others_lol,
                 R.drawable.others_hon,
                 R.drawable.others_silkroad,
-                R.drawable.others_java,
                 R.drawable.others_miui,
                 R.drawable.others_nividia,
                 R.drawable.others_skullcandy,
@@ -104,6 +148,27 @@ public class MainActivity extends Activity {
                 R.drawable.others_vodafone,
                 R.drawable.others_xda,
                 R.drawable.snowflake_icon
+        };
+
+        static String[] otherIconNames = {
+                "Team Venom",
+                "Intel",
+                "Beats",
+                "Cyanogen",
+                "Cyanogen",
+                "Etisalat",
+                "League of Legends",
+                "Heroes of Newerth",
+                "Silkroad",
+                "MIUI",
+                "Nividia",
+                "Skullcandy",
+                "Nividia",
+                "Team Venom",
+                "Virgin",
+                "Vodafone",
+                "XDA",
+                "SnowflakeTeam"
         };
 
     }
